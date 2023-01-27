@@ -16,6 +16,7 @@ builder.Services.AddDbContext<AppDbContext>(opt => opt.UseSqlite("Filename=./Bla
 builder.Services.AddScoped<IPersonRepository, PersonRepository>();
 builder.Services.AddScoped<IUploadRepository, UploadRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<ISkillRepository, SkillRepository>();
 builder.Services.AddScoped<IJwtUtils, JwtUtils>();
 
 builder.Services.AddSwaggerGen(c =>
@@ -77,7 +78,7 @@ else
 app.UseSwagger();
 app.UseSwaggerUI(c => 
 {
-    c.SwaggerEndpoint("/swagger/v1/swagger.json", "blazorcrud.api v1");
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "blazorcrud.api v2");
     c.DefaultModelsExpandDepth(-1);
 });
 
